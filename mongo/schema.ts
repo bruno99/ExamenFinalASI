@@ -2,6 +2,7 @@ export interface CocheSchema {
   _id: { $oid: string };
   matricula: string;
   conductor: string;
+  status: string;
   viajes: string[];//lista de viajes
 }
 
