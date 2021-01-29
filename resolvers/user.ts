@@ -24,7 +24,7 @@ const User = {
     });
   },
 
-  comche: async (
+  coche: async (
     parent: IUser,
     args: any,
     ctx: IContext
