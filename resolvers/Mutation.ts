@@ -66,16 +66,16 @@ const Mutation = {
       const found = await cochesCollection.find({ id: args.coche.id });
       if (!found) throw new GQLError("coche no existe");
 
-      const { id, conductor, status } = args.task;
+      const { id, conductor, status } = args.coche;
       const coche = {
         id,
         conductor: ctx.user.email,
         status,
       };
  if(args.coche.status == "FALSE){//si no estaba disponible se pone disponible
-  await tasksCollection.updateOne({ id: args.id }, { status: "TRUE" });
+  await cochesCollection.updateOne({ id: args.id }, { status: "TRUE" });
   }else{//si estaba disponible se pone no disponible
-  await tasksCollection.updateOne({ id: args.id }, { status: "FALSE" });
+  await cochesCollection.updateOne({ id: args.id }, { status: "FALSE" });
   }
       return true;
     } catch (e) {
