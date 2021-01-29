@@ -1,11 +1,13 @@
 export interface CocheSchema {
-  _matricula: { $oid: string };
+  _id: { $oid: string };
+  matricula: string;
   conductor: string;
   viajes: string[];//lista de viajes
 }
 
 export interface UserSchema {
-  _email: { $oid: string };
+  _id: { $oid: string };
+  email: string;
   tipo: string; //cliente/conductor/admin
   token: string;
   password: string;
