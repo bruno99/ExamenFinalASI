@@ -35,7 +35,9 @@ const Schema = gql`
   type Mutation {
     signIn(name: String!, password: String!): Boolean!
     logIn(email: String!, password: String!): String!
-    logOut: Boolean!    
+    logOut: Boolean! 
+    startViaje(id: String!): Boolean!
+    changeStatus(id: String!): Boolean!
   }
 `;
 
