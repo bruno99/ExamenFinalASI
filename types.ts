@@ -17,6 +17,7 @@ export interface IViaje {
 export interface ICoche {
   matricula: string;
   conductor: string;
+  status: string;
   viajes: string[];
 }
 
