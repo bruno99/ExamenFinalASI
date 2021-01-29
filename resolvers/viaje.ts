@@ -15,7 +15,7 @@ const Viaje = {
     const db: Database = ctx.db;
     const UsersCollection = db.collection<UserSchema>("UsersCollection");
 
-    const user = await UsersCollection.findOne({ email: parent.conductor });
+    const user = await UsersCollection.findOne({ conductor : parent.email });
     return user;
   },
 
@@ -27,7 +27,7 @@ const Viaje = {
     const db: Database = ctx.db;
     const UsersCollection = db.collection<UserSchema>("UsersCollection");
 
-    const user = await UsersCollection.findOne({ email: parent.cliente });
+    const user = await UsersCollection.findOne({ cliente: parent.email });
     return user;
   },
   coche: async (
@@ -38,7 +38,7 @@ const Viaje = {
     const db: Database = ctx.db;
     const CochesCollection = db.collection<CocheSchema>("CochesCollection");
 
-    const coche = await CochesCollection.findOne({ matricula: parent.coche });
+    const coche = await CochesCollection.findOne({ coche: parent.matricula });
     return coche;
   },
 
